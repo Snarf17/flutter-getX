@@ -8,28 +8,31 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final cHuman = Get.put(HumanController());
+  // final cHuman = Get.put(HumanController()); // ini cara ketika menggunakan obs
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Flutter GetX'),
+            title: const Text('Flutter GetX'),
           ),
-          body:
-              Center(child: Obx(() => Text('Nama Saya ${cHuman.human.name}'))),
+          body: Center(
+              child: GetX<HumanController>(
+            init: HumanController(),
+            builder: (controller) => Text('Nama saya ${controller.human.name}'),
+          )),
           floatingActionButton: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               FloatingActionButton(
-                onPressed: () => cHuman.changeUppercase(),
+                onPressed: () => Get.find<HumanController>().changeUppercase(),
                 child: const Text('Up'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               FloatingActionButton(
-                onPressed: () => cHuman.changeLowerCase(),
+                onPressed: () => Get.find<HumanController>().changeLowerCase(),
                 child: const Text('Low'),
               ),
             ],
