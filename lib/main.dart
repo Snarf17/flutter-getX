@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
             title: const Text('Flutter GetX'),
           ),
           body: Center(
-              child: GetX<HumanController>(
+              child: GetBuilder<HumanController>(
             init: HumanController(),
             builder: (controller) => Text('Nama saya ${controller.human.name}'),
           )),

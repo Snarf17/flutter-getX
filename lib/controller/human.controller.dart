@@ -3,12 +3,15 @@ import 'package:get/get.dart';
 
 class HumanController extends GetxController {
   var human = Human();
+  // String human = 'Bambang';
 
   void changeUppercase() {
-    human.name.value = human.name.value.toUpperCase();
+    human.name = human.name.toUpperCase();
+    update();
   }
 
   void changeLowerCase() {
-    human.name.value = human.name.value.toLowerCase();
+    human.name = human.name.toLowerCase();
+    update();
   }
 }
