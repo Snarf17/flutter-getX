@@ -8,13 +8,21 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // final cHuman = Get.put(HumanController()); // ini cara ketika menggunakan obs
+  final cHuman = Get.put(HumanController()); // ini cara ketika menggunakan obs
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: cHuman.theme ? ThemeData.dark() : ThemeData.light(),
       home: Scaffold(
           appBar: AppBar(
             title: const Text('Flutter GetX'),
+            actions: [
+              Switch(
+                value: cHuman.theme,
+                onChanged: (value) => cHuman.changeDarkTheme(),
+                // cHuman.changeDarkTheme(),
+              )
+            ],
           ),
           body: Center(
               child: GetBuilder<HumanController>(
