@@ -1,9 +1,16 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_getx/controller/human.controller.dart';
+import 'package:flutter_getx/controller/mycontroller.dart';
 import 'package:flutter_getx/models/human.dart';
+import 'package:flutter_getx/pages/home.dart';
+import 'package:flutter_getx/pages/page2.dart';
+import 'package:flutter_getx/pages/page3.dart';
+import 'package:flutter_getx/pages/page4.dart';
+import 'package:flutter_getx/pages/page5.dart';
+import 'package:flutter_getx/routes/page_route.dart';
 import 'package:get/get.dart';
+import 'package:flutter_getx/pages/page1.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,61 +19,9 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  final countC = Get.put(HumanController());
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => OtherPage(),
-            )),
-            icon: const Icon(Icons.home),
-          )
-        ],
-        title: const Text('LifeCycle'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: CountWidget(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => countC.add(),
-      ),
-    );
-  }
-}
-
-class CountWidget extends StatelessWidget {
-  // int count;
-  // final counC = Get.find<HumanController>();
-
-  @override
-  Widget build(BuildContext context) {
-    return GetBuilder<HumanController>(
-      builder: (c) => Text('Angka ${c.count}'),
-    );
-  }
-}
-
-class OtherPage extends StatelessWidget {
-  const OtherPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Other Page'),
-      ),
-      body: const Text('Other Page'),
+    return GetMaterialApp(
+      home: PageSatu(),
+      getPages: PageRoutes.pages,
     );
   }
 }
