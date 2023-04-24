@@ -6,14 +6,14 @@ import 'package:flutter_getx/pages/page3.dart';
 import 'package:flutter_getx/routes/name_route.dart';
 import 'package:get/get.dart';
 
-class PageSatu extends StatelessWidget {
-  const PageSatu({super.key});
+class Product extends StatelessWidget {
+  Product({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Page Satu'),
+        title: const Text('Product'),
         centerTitle: true,
       ),
       body: Center(
@@ -21,22 +21,16 @@ class PageSatu extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () {
-                Get.to(PageDua(), arguments: "Argument");
-              },
-              // navigator!.push(MaterialPageRoute(
-              //   builder: (_) => PageDua(),
-              // )
-
-              child: const Text('Page Dua'),
+              onPressed: () => Get.toNamed(RouteNames.detailproduct + '/1'),
+              child: const Text('Sweater'),
             ),
             ElevatedButton(
-              onPressed: () => Get.toNamed(RouteNames.page_2),
-              // navigator!.push(MaterialPageRoute(
-              //   builder: (_) => PageDua(),
-              // )
-
-              child: const Text('Page Dua'),
+              onPressed: () => Get.toNamed(RouteNames.detailproduct + '/2'),
+              child: const Text('Tshirt'),
+            ),
+            ElevatedButton(
+              onPressed: () => Get.toNamed(RouteNames.detailproduct + '/3'),
+              child: const Text('Celana'),
             ),
           ],
         ),
