@@ -32,7 +32,87 @@ class ExampleSnackBar extends StatelessWidget {
                 onTap: (snack) => Get.toNamed(RouteNames.page_3),
                 // backgroundGradient: LinearGradient(colors: Colors.accents)
               ),
-              child: const Text('Snack'),
+              child: const Text(
+                'Snack',
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            FloatingActionButton(
+              onPressed: () => Get.bottomSheet(
+                Container(
+                  height: 300,
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  color: Colors.white,
+                  child: ListView(children: [
+                    Column(children: [
+                      Text(
+                        'Register',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          contentPadding:
+                              EdgeInsets.symmetric(vertical: 2, horizontal: 10),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: 2, horizontal: 10)),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: 2, horizontal: 10)),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: 2, horizontal: 10)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 15),
+                        child: SizedBox(
+                          width: 400,
+                          child: ElevatedButton(
+                            onPressed: () => print('asd'),
+                            child: const Text('Submit'),
+                            style: ButtonStyle(
+                                shape: MaterialStateProperty.all(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(15)))),
+                          ),
+                        ),
+                      ),
+                    ]),
+                  ]),
+                ),
+              ),
+              child: const Text('Bottom Sheet'),
             ),
             SizedBox(
               height: 20,
