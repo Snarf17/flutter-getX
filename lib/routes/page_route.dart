@@ -5,11 +5,16 @@ import 'package:flutter_getx/pages/page3.dart';
 import 'package:flutter_getx/pages/page4.dart';
 import 'package:flutter_getx/pages/page5.dart';
 import 'package:flutter_getx/pages/product.dart';
+import 'package:flutter_getx/pages/snackbar.dart';
 import 'package:flutter_getx/routes/name_route.dart';
 import 'package:get/get.dart';
 
 class PageRoutes {
   static final pages = [
+    GetPage(
+      name: RouteNames.snackbar,
+      page: () => ExampleSnackBar(),
+    ),
     GetPage(
       name: RouteNames.home,
       page: () => HomePage(),

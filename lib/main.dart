@@ -5,6 +5,7 @@ import 'package:flutter_getx/controller/mycontroller.dart';
 import 'package:flutter_getx/models/human.dart';
 import 'package:flutter_getx/pages/home.dart';
 import 'package:flutter_getx/pages/product.dart';
+import 'package:flutter_getx/pages/snackbar.dart';
 import 'package:flutter_getx/routes/page_route.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: HomePage(),
+      home: ExampleSnackBar(),
       getPages: PageRoutes.pages,
     );
   }

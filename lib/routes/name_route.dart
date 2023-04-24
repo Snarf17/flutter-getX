@@ -1,5 +1,6 @@
 abstract class RouteNames {
   int id = 0;
+  static const snackbar = '/snackbar';
   static const home = '/home';
   static const detailproduct = '/product';
   static const product = '/product';
